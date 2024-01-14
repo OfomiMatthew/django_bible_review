@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+  <div class="container">
+  <form action="" method="GET">
+    <div class="mb-3">
+      <label for="search-character" class="form-label">Search for Character:</label>
+      <input type="text" class="form-control" name="searchTerm" id="search-character">
+     
+    </div>
+   
+   
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  
+  <p>Searching for {{searchTerm}}</p>
+
+  
+
+  
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for character in characters %} 
+    <div class="col">
+      <div class="card h-100">
+        <img src="{{character.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          
+          <h4 class="card-title">
+            <a href="{% url 'detail' character.id %}" class="text-decoration-none">{{character.character}}</a>
+          
+          </h4>
+          <h5 class="card-title">{{character.title}}</h5>
+          <p class="card-text">{{character.description}}</p>
+        
+          {% if character.url %} 
+          <a href="{{character.url}}" class="btn btn-primary">More</a>
+          {% endif %} 
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+
+   <br>
+
+
+</div>
+{% endblock content %}

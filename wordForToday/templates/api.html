@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+
+{% block title %}
+   Word for today
+{% endblock %}
+
+
+{% block content %}
+
+<div class="card mb-3">
+  <div class="row g-0">
+
+    <div>
+      <div class="card-body">
+    <h2 class="card-title">{{random_verse.scripture}}</h2>
+    <p class="card-text">{{random_verse.text}}</p>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+{% endblock content %}
