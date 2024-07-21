@@ -6,14 +6,15 @@
 
 
 {% block content %}
-
+<h1>Word for Today</h1>
 <div class="card mb-3">
   <div class="row g-0">
+   
 
     <div>
       <div class="card-body">
-    <h2 class="card-title">{{random_verse.scripture}}</h2>
-    <p class="card-text">{{random_verse.text}}</p>
+    <p class="card-title">{{verse}}</p>
+    <p class="card-text"><strong>{{reference}}</strong> ({{version}})</p>
 
   </div>
   </div>

@@ -8,21 +8,26 @@
     <div class="mb-3">
       <label for="search-character" class="form-label">Search for Character:</label>
       <input type="text" class="form-control" name="searchTerm" id="search-character">
-     
     </div>
-   
-   
+  
     <button type="submit" class="btn btn-primary">Search</button>
   </form>
-
   
-  <p>Searching for {{searchTerm}}</p>
+  {% if searchTerm %}
+  <p>Searching for {{searchTerm}} </p>
+  {% endif %}
+    
 
-  
 
-  
   <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    
+
+      
+    
+      
     {% for character in characters %} 
+     
     <div class="col">
       <div class="card h-100">
         <img src="{{character.image.url}}" class="card-img-top" alt="...">
@@ -41,7 +46,9 @@
         </div>
       </div>
     </div>
+   
     {% endfor %}
+   
     </div>
 
    <br>
