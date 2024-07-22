@@ -5,24 +5,14 @@
   <div class="row g-0">
     <div>
       <div class="card-body">
-        <h5 class="card-title">Sign Up</h5>
-        {% if error %}
-        <div class="alert alert-danger mt-3" role="alert">
-          {{ error }}
-        </div>
-        {% endif %}
-
-       
-       
-
-
+        <h5 class="card-title">Are you sure you want to delete "{{obj}}" ?</h5>
+      
         <p class="card-text">
           <form method="POST">
             {% csrf_token %}
             {{ form|crispy }}
-            <button type="submit" class="btn btn-primary">
-              Sign Up
-            </button>
+            <a href="{{request.META.HTTP_REFERER}}">Go back</a>
+           <input type="submit" value="confirm">
           </form>
         </p>
       </div>
